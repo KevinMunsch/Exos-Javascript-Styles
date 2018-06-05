@@ -4,15 +4,63 @@
     <meta charset="UTF-8">
     <title>Styles Javascript</title>
 </head>
-    <body>
-
     <body class="main page">
+      <!-- exercice 1 -->
+      <h1 class="toto">je suis grand</h1>
+
+      <!-- exercice 2 -->
+      <form class="couleur" action="index.html" method="post">
+      <button type="button" name="button" class="button">DANGER</button>
+      </form>
+
+      <!-- exercice 5 -->
+      <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      <form class="" action="index.html" method="post">
+      <button type="button" name="button" class="button">Afficher/cacher</button>
+      </form>
+
     <script>
-        alert(document.body.className); // main page
+        // exercice 1
+        alert(document.getElementsByTagName('h1')[0].className); // h1 class="toto"
+
+        // exercice 2
+        a = document.getElementsByClassName('button')[0];// selection boutton
+        a.addEventListener("click", changement => {
+
+        document.getElementsByTagName('h1')[0].style.color="red";
+        });// changement couleur text en rouge
+
+        // exercice 3
+        b=document.getElementsByTagName('h1')[0].className+=" titre";//h1 class="toto titre"
+        alert(b)
+
+        c = document.getElementsByClassName('button')[0];// selection boutton
+        c.addEventListener("click", changement_couleur => {
+
+        document.getElementsByTagName('h1')[0].style.backgroundColor="red";
+        document.getElementsByTagName('h1')[0].style.color="white";
+      });// changement backgroundcouleur en rouge
+
+        // exercice 4
+        d=document.getElementsByTagName('h1')[0].className+=" rouge";//h1 class="toto titre couleur"
+        e=document.getElementsByTagName('h1')[0];
+        for(item of e.classList){
+          var p=document.createElement("p");
+          p.innerHTML=item;
+          document.body.appendChild(p);
+        };
+
+        // exercice 5
+        f = document.getElementsByClassName('button')[1];// selection boutton
+        f.addEventListener("click", visibleInvisible => {
+
+      if(document.getElementById('text').style.visibility =="hidden"){
+        document.getElementById('text').style.visibility ="visible";
+      }else{
+          document.getElementById('text').style.visibility ="hidden";
+      }
+    });
+
     </script>
-    </body
-
-
-
     </body>
 </html>
